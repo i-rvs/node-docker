@@ -1,1 +1,14 @@
 Node-docker repository
+
+Node Steps:
+1. npm init
+2. npm install express
+3. npm install nodemon --save-dev
+4. node index.js
+
+Docker Steps:
+1. docker build -t node-app-image . 
+2. docker run -d -p3000:3000 --name node-app node-app-image
+3. docker exec -it node-app bash
+4. docker rm -f node-app
+5. docker run -v /$(pwd):/app -v /app/node_mudules -d -p3000:3000 --name node-app node-app-image
